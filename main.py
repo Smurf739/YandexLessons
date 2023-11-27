@@ -24,8 +24,11 @@ class Interface(QtWidgets.QMainWindow):
 
         diametr = random.randint(50, 187)
         rect = QtCore.QRectF(0, 0, diametr, diametr)
-        color = Qt.yellow
+        color = Qt.GlobalColor(random.randint(1, 18))
         self.scene.addEllipse(rect, QtGui.QPen(color), QtGui.QBrush(color))
+        if color == 3:
+            self.scene.clear()
+            self.scene.addText("Белый круг")
 
 
 
